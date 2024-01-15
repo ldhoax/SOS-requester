@@ -17,6 +17,7 @@ Gin allows you to build web applications and microservices in Go. It contains a 
 3. Make an `.env` file from `.env.example`
 4. Go to `pgadmin` create a database. Note the name of it and add to `.env`
 5. Install **Air - live reload fo Go apps**. You can visit this [page](https://github.com/cosmtrek/air).
+6. Install migrate to migration table to database. You can visti this [page](https://github.com/golang-migrate/migrate/blob/master/GETTING_STARTED.md).
 
 ## 💿 Installation
 
@@ -36,6 +37,11 @@ Gin allows you to build web applications and microservices in Go. It contains a 
    make run
    ```
 4. Visit: http://localhost:8088/api/v1/health
+
+5. Migration database: 
+    ```
+    migrate -database ${POSTGRESQL_URL} -path database/migrations up
+    ```
 
 #### Via `docker`
 Run by docker
@@ -154,13 +160,13 @@ response:
     "status": "success",
     "message": "Get user success",
     "data": {
-        "created_at": "2024-01-12T16:57:43Z",
-        "updated_at": "2024-01-12T16:57:43Z",
-        "username": "edric2",
+        "created_at": "2024-01-15T16:34:14Z",
+        "updated_at": "2024-01-15T16:34:14Z",
+        "username": "edric1",
         "password": "",
-        "Email": "edric.cao.goldenowl@gmail.com",
-        "Status": 1,
-        "id": 10
+        "email": "cao.bada96@gmail.com",
+        "status": 1,
+        "id": 1
     }
 }
 ```

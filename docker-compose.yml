@@ -30,22 +30,22 @@ services:
     networks:
       - backend
 
-  # migrate:
-  #   image: migrate/migrate
-  #   networks:
-  #     - backend
-  #   volumes:
-  #     - .:/migrations
-  #   command:
-  #     [
-  #       "-path",
-  #       "/migrations",
-  #       "-database",
-  #       "postgres://${DATABASE_USER}:${DATABASE_PASSWORD}@db:5432/${DATABASE_NAME}?sslmode=disable",
-  #       "up"
-  #     ]
-  #   depends_on:
-  #     - db
+  migrate:
+    image: migrate/migrate
+    networks:
+      - backend
+    volumes:
+      - database/migrations:/migrations
+    command:
+      [
+        "-path",
+        "database/migrations",
+        "-database",
+        "postgres://${DATABASE_USER}:${DATABASE_PASSWORD}@db:5432/${DATABASE_NAME}?sslmode=disable",
+        "up"
+      ]
+    depends_on:
+      - db
 
   redis:
     image: "redis:alpine" # Use a public Redis image to build the redis service    

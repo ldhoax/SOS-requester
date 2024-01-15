@@ -31,9 +31,9 @@ type User struct {
 	UpdatedAt time.Time `json:"updated_at,omitempty"`
 	Username  string    `gorm:"size:255;not null;unique" json:"username"`
 	Password  string    `gorm:"size:255;not null" json:"password"`
-	Email     string
-	Status    Status `gorm:"embedded"`
-	ID        uint   `json:"id"`
+	Email     string    `gorm:"size:255;not null" json:"email"`
+	Status    Status    `gorm:"embedded" json:"status"`
+	ID        uint      `json:"id"`
 }
 
 func (u *User) BeforeSave(db *gorm.DB) error {
