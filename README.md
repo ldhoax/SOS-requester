@@ -89,9 +89,9 @@ go test -v ./utils -cover
 # specific test file
 go test ./utils/array_test.go ./utils/array.go
 # one unit test
-# - api/utils is a package name
+# - utils is a package name
 # - TestChunkSlice is a testcase
-go test api/utils -run TestChunkSlice
+go test utils -run TestChunkSlice
 ```
 
 ### 🧪 Improve code with lint checks
