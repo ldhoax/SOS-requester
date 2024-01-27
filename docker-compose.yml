@@ -1,0 +1,57 @@
+version: '3'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "${SERVER_PORT}:8080"
+    restart: always
+    depends_on:
+      - redis
+      - db
+    environment:
+      REDIS_URL: redis:6379
+    networks:
+      - backend
+
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+      POSTGRES_USER: ${DATABASE_USER}
+      POSTGRES_DB: ${DATABASE_NAME}
+    ports:
+      - "${DATABASE_PORT}:5432"
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+    networks:
+      - backend
+
+  migrate:
+    image: migrate/migrate
+    networks:
+      - backend
+    volumes:
+      - database/migrations:/migrations
+    command:
+      [
+        "-path",
+        "database/migrations",
+        "-database",
+        "postgres://${DATABASE_USER}:${DATABASE_PASSWORD}@db:5432/${DATABASE_NAME}?sslmode=disable",
+        "up"
+      ]
+    depends_on:
+      - db
+
+  redis:
+    image: "redis:alpine" # Use a public Redis image to build the redis service    
+    restart: unless-stopped
+    networks:
+      - backend
+
+networks:
+  backend:
