@@ -15,6 +15,7 @@ type Route interface {
 func Register(r *gin.Engine, lg *logrus.Logger, db *gorm.DB) {
 	controller := controllers.NewController(lg)
 
+	r.Use(middlewares.CORSMiddleware())
 	r.Use(controller.MiddlewareLogger())
 	v1 := r.Group("/api/v1")
 	{
@@ -25,6 +26,5 @@ func Register(r *gin.Engine, lg *logrus.Logger, db *gorm.DB) {
 		{
 			NewUserRouter(v1, lg, db)
 		}
-
 	}
 }

@@ -38,7 +38,7 @@ Gin allows you to build web applications and microservices in Go. It contains a 
    ```
 4. Visit: http://localhost:8088/api/v1/health
 
-5. Migration database: 
+5. Migration database:
     ```
     migrate -database ${POSTGRESQL_URL} -path database/migrations up
     ```
@@ -51,33 +51,33 @@ docker-compose up
 
 ## Folder structure of project
 
-**/cmd**  
+**/cmd**
 The folder will contain the main applications for this project.
 There might be more than 1 application within cmd folder, and each application should have its own folder so the path would be cmd -> applicationNameFolder.
 
-**/api**  
+**/api**
 This folder can have OpenAPI/Swagger specs, JSON schema files, and protocol definition files.
 
-**/configs**  
+**/configs**
 It can have configuration file templates or default configs.
 
-**/internal**  
+**/internal**
 Private application and library code. This is the code you don't want others importing into their applications or libraries. Note that this layout pattern is enforced by the Go compiler itself. Note that you are not limited to the top-level internal directory. You can have more than one internal directory at any level of your project tree.
 
-**/pkg**  
+**/pkg**
 Library codes which can be used by external applications (e.g. /pkg/mypubliclib). Other projects will import these libraries expecting them to work, so double-check before you put something here.
 
-**/web**  
+**/web**
 Web application-specific components: static web assets, server-side templates and SPAs.
 
-**/http**  
+**/http**
 You might want to expose your application through several means of communication such as rest-api and grpc.
 This way you can have a separate separation between each type of communication layer by creating a separate directory such as /http/rest or /http/grpc
 
-**/tests**  
+**/tests**
 The folder will contain unit test, testcase of the project.
 
-**/utils**  
+**/utils**
 The directory contains supporting tools for this project.
 
 
@@ -106,7 +106,7 @@ make lint
 ```
 
 ## Demo
-### Health 
+### Health
 
 ```sh
 curl -L 'localhost:8088/api/v1/health'
@@ -155,7 +155,7 @@ curl --location 'localhost:8088/api/v1/user' \
 ```
 response:
 
-```json 
+```json
 {
     "status": "success",
     "message": "Get user success",
