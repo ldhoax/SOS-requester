@@ -1,0 +1,8 @@
+{
+  "request.create.fail": "Create request failed",
+  "request.create.success": "Create request successful",
+  "request.index.fail": "Get requests failed",
+  "request.index.success": "Get requests successful",
+  "request.get.fail": "Get request failed",
+  "request.get.success": "Get request successful"
+}

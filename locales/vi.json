@@ -1,0 +1,8 @@
+{
+  "request.create.fail": "Tạo yêu cầu thất bại",
+  "request.create.success": "Tạo yêu cầu thành công",
+  "request.index.fail": "Lấy các yêu cầu thất bại",
+  "request.index.success": "Lấy các yêu cầu thành công",
+  "request.get.fail": "Lấy yêu cầu thất bại",
+  "request.get.success": "Lấy yêu cầu thành công"
+}
