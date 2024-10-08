@@ -29,11 +29,3 @@ func (r Repository) Find(id uint) (model.Request, error) {
 func (r Repository) Create(entity *model.Request) error {
 	return db.HandleError(r.Db.Create(entity).Error)
 }
-
-func (r Repository) Update(entity *model.Request) error {
-	return db.HandleError(r.Db.Save(entity).Error)
-}
-
-func (r Repository) Delete(id uint) error {
-	return db.HandleError(r.Db.Delete(&model.Request{}, id).Error)
-}

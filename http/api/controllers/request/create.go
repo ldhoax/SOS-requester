@@ -11,18 +11,18 @@ import (
 
 func (r RequestController) Create(c *gin.Context) {
 	type request struct {
-		PhoneNumber    string  `json:"phone_number"`
-		Email          string  `json:"email"`
-		EmergencyLevel int     `json:"emergency_level"`
-		Location       string  `json:"location"`
-		Latitude       float64 `json:"latitude"`
-		Longitude      float64 `json:"longitude"`
-		ShortDescription string  `json:"short_description"`
-		Description    string  `json:"description"`
+		PhoneNumber    string  `form:"phone_number"`
+		Email          string  `form:"email"`
+		EmergencyLevel int     `form:"emergency_level"`
+		Location       string  `form:"location"`
+		Latitude       float64 `form:"latitude"`
+		Longitude      float64 `form:"longitude"`
+		ShortDescription string  `form:"short_description"`
+		Description    string  `form:"description"`
 	}
 
 	var requestInput request
-	if err := c.ShouldBindJSON(&requestInput); err != nil {
+	if err := c.ShouldBind(&requestInput); err != nil {
 		r.helper.Respond(c, i18n.Translate("en", "request.create.fail"), erru.ErrArgument{Wrapped: err}, 0)
 		return
 	}
