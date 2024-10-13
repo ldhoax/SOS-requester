@@ -1,6 +1,7 @@
 CREATE TABLE
     requests (
-        id SERIAL,
+        id UUID PRIMARY KEY,
+        requester_id UUID NOT NULL,
         phone_number TEXT,
         email TEXT,
         short_description TEXT NOT NULL,
@@ -12,5 +13,5 @@ CREATE TABLE
         created_at TIMESTAMP(0) WITHOUT TIME ZONE NOT NULL,
         updated_at TIMESTAMP(0) WITHOUT TIME ZONE,
         deleted_at TIMESTAMP(0) WITHOUT TIME ZONE,
-        PRIMARY KEY (id)
+        FOREIGN KEY (requester_id) REFERENCES requesters(id)
     );

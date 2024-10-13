@@ -11,16 +11,18 @@ import (
 type RequestController struct {
 	helper      *controllers.Helper
 	requestService RequestService.Service
+	db *gorm.DB
 }
 
-func NewRequestService(lg *logrus.Logger, model RequestService.Service) RequestController {
+func NewRequestService(lg *logrus.Logger, model RequestService.Service, db *gorm.DB) RequestController {
 	helper := controllers.NewHelper(lg)
 	return RequestController{
 		helper:      helper,
 		requestService: model,
+		db: db,
 	}
 }
 
 func NewRequestController(lg *logrus.Logger, db *gorm.DB) RequestController {
-	return NewRequestService(lg, RequestService.NewService(RequestRepo.NewRepository(db)))
+	return NewRequestService(lg, RequestService.NewService(RequestRepo.NewRepository(db)), db)
 }

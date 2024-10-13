@@ -5,6 +5,7 @@ import (
 	"github.com/GoldenOwlAsia/go-golang-api/pkg/erru"
 	"github.com/asaskevich/govalidator"
 	"github.com/gin-gonic/gin"
+	"time"
 	"fmt"
 )
 
@@ -17,6 +18,7 @@ type CreateParams struct {
 	Latitude       float64   `valid:"optional"`
 	Longitude      float64   `valid:"optional"`
 	Description    string    `valid:"optional"`
+	RequesterID    string    `valid:"required"`
 }
 
 func (s Service) Create(ctx *gin.Context, params CreateParams) (model.Request, error) {
@@ -41,6 +43,8 @@ func (s Service) Create(ctx *gin.Context, params CreateParams) (model.Request, e
 		Location:       params.Location,
 		ShortDescription: params.ShortDescription,
 		Description:    params.Description,
+		RequesterID:    params.RequesterID,
+		CreatedAt:      time.Now().UTC(),
 	}
 	err := s.repo.Create(&entity)
 	if err != nil {
