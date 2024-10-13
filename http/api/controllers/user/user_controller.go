@@ -1,9 +1,9 @@
 package user
 
 import (
-	"github.com/GoldenOwlAsia/go-golang-api/http/api/controllers"
-	UserRepo "github.com/GoldenOwlAsia/go-golang-api/internal/user/repository"
-	UserService "github.com/GoldenOwlAsia/go-golang-api/internal/user/service"
+	"github.com/ldhoax/SOS-requester/http/api/controllers"
+	UserRepo "github.com/ldhoax/SOS-requester/internal/user/repository"
+	UserService "github.com/ldhoax/SOS-requester/internal/user/service"
 	"github.com/sirupsen/logrus"
 	"gorm.io/gorm"
 )

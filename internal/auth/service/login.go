@@ -3,10 +3,10 @@ package service
 import (
 	"errors"
 
-	"github.com/GoldenOwlAsia/go-golang-api/internal/requester/model"
-	"github.com/GoldenOwlAsia/go-golang-api/internal/utils/token"
-	"github.com/GoldenOwlAsia/go-golang-api/pkg/erru"
-	"github.com/GoldenOwlAsia/go-golang-api/utils"
+	"github.com/ldhoax/SOS-requester/internal/requester/model"
+	"github.com/ldhoax/SOS-requester/internal/utils/token"
+	"github.com/ldhoax/SOS-requester/pkg/erru"
+	"github.com/ldhoax/SOS-requester/utils"
 	"github.com/asaskevich/govalidator"
 	"github.com/gin-gonic/gin"
 	"golang.org/x/crypto/bcrypt"

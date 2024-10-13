@@ -3,8 +3,8 @@ package user
 import (
 	"net/http"
 
-	userService "github.com/GoldenOwlAsia/go-golang-api/internal/user/service"
-	"github.com/GoldenOwlAsia/go-golang-api/pkg/erru"
+	userService "github.com/ldhoax/SOS-requester/internal/user/service"
+	"github.com/ldhoax/SOS-requester/pkg/erru"
 	"github.com/gin-gonic/gin"
 )
 

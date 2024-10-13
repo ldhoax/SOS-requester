@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/GoldenOwlAsia/go-golang-api/http/api"
-	"github.com/GoldenOwlAsia/go-golang-api/pkg/sentry"
-	"github.com/GoldenOwlAsia/go-golang-api/internal/i18n"
+	"github.com/ldhoax/SOS-requester/http/api"
+	"github.com/ldhoax/SOS-requester/pkg/sentry"
+	"github.com/ldhoax/SOS-requester/internal/i18n"
 )
 
 func main() {

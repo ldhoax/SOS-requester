@@ -1,8 +1,8 @@
 package service
 
 import (
-	"github.com/GoldenOwlAsia/go-golang-api/internal/request/model"
-	"github.com/GoldenOwlAsia/go-golang-api/pkg/erru"
+	"github.com/ldhoax/SOS-requester/internal/request/model"
+	"github.com/ldhoax/SOS-requester/pkg/erru"
 	"github.com/asaskevich/govalidator"
 	"github.com/gin-gonic/gin"
 	"time"

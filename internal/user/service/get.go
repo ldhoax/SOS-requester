@@ -3,9 +3,9 @@ package service
 import (
 	"errors"
 
-	"github.com/GoldenOwlAsia/go-golang-api/internal/user/model"
-	"github.com/GoldenOwlAsia/go-golang-api/pkg/db"
-	"github.com/GoldenOwlAsia/go-golang-api/pkg/erru"
+	"github.com/ldhoax/SOS-requester/internal/user/model"
+	"github.com/ldhoax/SOS-requester/pkg/db"
+	"github.com/ldhoax/SOS-requester/pkg/erru"
 	"github.com/gin-gonic/gin"
 )
 

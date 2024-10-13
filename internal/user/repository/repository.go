@@ -1,8 +1,8 @@
 package repository
 
 import (
-	"github.com/GoldenOwlAsia/go-golang-api/internal/user/model"
-	"github.com/GoldenOwlAsia/go-golang-api/pkg/db"
+	"github.com/ldhoax/SOS-requester/internal/user/model"
+	"github.com/ldhoax/SOS-requester/pkg/db"
 	"gorm.io/gorm"
 )
 

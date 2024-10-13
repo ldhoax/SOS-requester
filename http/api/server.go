@@ -3,10 +3,10 @@ package api
 import (
 	"fmt"
 
-	"github.com/GoldenOwlAsia/go-golang-api/configs"
-	router "github.com/GoldenOwlAsia/go-golang-api/http/api/routers"
-	"github.com/GoldenOwlAsia/go-golang-api/pkg/db"
-	"github.com/GoldenOwlAsia/go-golang-api/pkg/sentry"
+	"github.com/ldhoax/SOS-requester/configs"
+	router "github.com/ldhoax/SOS-requester/http/api/routers"
+	"github.com/ldhoax/SOS-requester/pkg/db"
+	"github.com/ldhoax/SOS-requester/pkg/sentry"
 	sentrygin "github.com/getsentry/sentry-go/gin"
 	"github.com/gin-gonic/gin"
 	"github.com/sirupsen/logrus"

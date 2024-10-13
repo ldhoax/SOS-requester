@@ -8,7 +8,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/GoldenOwlAsia/go-golang-api/configs"
+	"github.com/ldhoax/SOS-requester/configs"
 	"gopkg.in/gomail.v2"
 )
 

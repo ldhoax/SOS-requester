@@ -7,7 +7,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/GoldenOwlAsia/go-golang-api/configs"
+	"github.com/ldhoax/SOS-requester/configs"
 	jwt "github.com/dgrijalva/jwt-go"
 	"github.com/gin-gonic/gin"
 )

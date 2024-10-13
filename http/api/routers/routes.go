@@ -1,8 +1,8 @@
 package router
 
 import (
-	"github.com/GoldenOwlAsia/go-golang-api/http/api/controllers"
-	"github.com/GoldenOwlAsia/go-golang-api/http/api/middlewares"
+	"github.com/ldhoax/SOS-requester/http/api/controllers"
+	"github.com/ldhoax/SOS-requester/http/api/middlewares"
 	"github.com/gin-gonic/gin"
 	"github.com/sirupsen/logrus"
 	"gorm.io/gorm"

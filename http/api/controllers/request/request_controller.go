@@ -1,9 +1,9 @@
 package request
 
 import (
-	"github.com/GoldenOwlAsia/go-golang-api/http/api/controllers"
-	RequestRepo "github.com/GoldenOwlAsia/go-golang-api/internal/request/repository"
-	RequestService "github.com/GoldenOwlAsia/go-golang-api/internal/request/service"
+	"github.com/ldhoax/SOS-requester/http/api/controllers"
+	RequestRepo "github.com/ldhoax/SOS-requester/internal/request/repository"
+	RequestService "github.com/ldhoax/SOS-requester/internal/request/service"
 	"github.com/sirupsen/logrus"
 	"gorm.io/gorm"
 )

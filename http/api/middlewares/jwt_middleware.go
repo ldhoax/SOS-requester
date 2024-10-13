@@ -3,7 +3,7 @@ package middlewares
 import (
 	"net/http"
 
-	"github.com/GoldenOwlAsia/go-golang-api/internal/utils/token"
+	"github.com/ldhoax/SOS-requester/internal/utils/token"
 	"github.com/gin-gonic/gin"
 )
 

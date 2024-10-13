@@ -7,9 +7,9 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/GoldenOwlAsia/go-golang-api/internal/user/model"
-	"github.com/GoldenOwlAsia/go-golang-api/internal/utils/token"
-	"github.com/GoldenOwlAsia/go-golang-api/pkg/erru"
+	"github.com/ldhoax/SOS-requester/internal/user/model"
+	"github.com/ldhoax/SOS-requester/internal/utils/token"
+	"github.com/ldhoax/SOS-requester/pkg/erru"
 	"github.com/gin-gonic/gin"
 )
 

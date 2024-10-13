@@ -1,11 +1,11 @@
 package service
 
 import (
-	"github.com/GoldenOwlAsia/go-golang-api/configs"
-	"github.com/GoldenOwlAsia/go-golang-api/internal/user/model"
-	UserService "github.com/GoldenOwlAsia/go-golang-api/internal/user/service"
-	"github.com/GoldenOwlAsia/go-golang-api/pkg/erru"
-	"github.com/GoldenOwlAsia/go-golang-api/pkg/mailer"
+	"github.com/ldhoax/SOS-requester/configs"
+	"github.com/ldhoax/SOS-requester/internal/user/model"
+	UserService "github.com/ldhoax/SOS-requester/internal/user/service"
+	"github.com/ldhoax/SOS-requester/pkg/erru"
+	"github.com/ldhoax/SOS-requester/pkg/mailer"
 	"github.com/gin-gonic/gin"
 )
 

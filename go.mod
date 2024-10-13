@@ -1,4 +1,4 @@
-module github.com/GoldenOwlAsia/go-golang-api
+module github.com/ldhoax/SOS-requester
 
 go 1.23
 

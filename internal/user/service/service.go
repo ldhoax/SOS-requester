@@ -1,7 +1,7 @@
 package service
 
 import (
-	"github.com/GoldenOwlAsia/go-golang-api/internal/user/repository"
+	"github.com/ldhoax/SOS-requester/internal/user/repository"
 )
 
 type Service struct {

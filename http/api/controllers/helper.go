@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/GoldenOwlAsia/go-golang-api/pkg/erru"
-	"github.com/GoldenOwlAsia/go-golang-api/pkg/sentry"
-	"github.com/GoldenOwlAsia/go-golang-api/utils"
+	"github.com/ldhoax/SOS-requester/pkg/erru"
+	"github.com/ldhoax/SOS-requester/pkg/sentry"
+	"github.com/ldhoax/SOS-requester/utils"
 	"github.com/gin-gonic/gin"
 )
 

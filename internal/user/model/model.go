@@ -5,7 +5,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/GoldenOwlAsia/go-golang-api/utils"
+	"github.com/ldhoax/SOS-requester/utils"
 	"gorm.io/gorm"
 )
 

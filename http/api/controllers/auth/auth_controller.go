@@ -1,9 +1,9 @@
 package auth
 
 import (
-	"github.com/GoldenOwlAsia/go-golang-api/http/api/controllers"
-	AuthService "github.com/GoldenOwlAsia/go-golang-api/internal/auth/service"
-	UserRepo "github.com/GoldenOwlAsia/go-golang-api/internal/user/repository"
+	"github.com/ldhoax/SOS-requester/http/api/controllers"
+	AuthService "github.com/ldhoax/SOS-requester/internal/auth/service"
+	UserRepo "github.com/ldhoax/SOS-requester/internal/user/repository"
 	"github.com/sirupsen/logrus"
 	"gorm.io/gorm"
 )

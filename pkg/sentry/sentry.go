@@ -5,7 +5,7 @@ import (
 	"log"
 	"time"
 
-	"github.com/GoldenOwlAsia/go-golang-api/configs"
+	"github.com/ldhoax/SOS-requester/configs"
 	"github.com/getsentry/sentry-go"
 )
 

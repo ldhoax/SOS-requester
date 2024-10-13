@@ -4,16 +4,16 @@ import (
 	"net/http"
 	"strconv"
 
-	requestService "github.com/GoldenOwlAsia/go-golang-api/internal/request/service"
+	requestService "github.com/ldhoax/SOS-requester/internal/request/service"
 
-	requesterService "github.com/GoldenOwlAsia/go-golang-api/internal/requester/service"
-	"github.com/GoldenOwlAsia/go-golang-api/internal/requester/model"
-	RequesterRepo "github.com/GoldenOwlAsia/go-golang-api/internal/requester/repository"
+	requesterService "github.com/ldhoax/SOS-requester/internal/requester/service"
+	"github.com/ldhoax/SOS-requester/internal/requester/model"
+	RequesterRepo "github.com/ldhoax/SOS-requester/internal/requester/repository"
 
-	"github.com/GoldenOwlAsia/go-golang-api/pkg/erru"
+	"github.com/ldhoax/SOS-requester/pkg/erru"
 	"github.com/gin-gonic/gin"
-	"github.com/GoldenOwlAsia/go-golang-api/internal/i18n"
-	"github.com/GoldenOwlAsia/go-golang-api/internal/utils/token"
+	"github.com/ldhoax/SOS-requester/internal/i18n"
+	"github.com/ldhoax/SOS-requester/internal/utils/token"
 )
 
 func (r RequestController) Create(c *gin.Context) {

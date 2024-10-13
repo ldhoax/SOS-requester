@@ -5,7 +5,7 @@ import (
 	"time"
 
 	"gorm.io/gorm"
-	"github.com/GoldenOwlAsia/go-golang-api/utils"
+	"github.com/ldhoax/SOS-requester/utils"
 	"github.com/google/uuid"
 )
 

@@ -1,7 +1,7 @@
 package router
 
 import (
-	"github.com/GoldenOwlAsia/go-golang-api/http/api/controllers/user"
+	"github.com/ldhoax/SOS-requester/http/api/controllers/user"
 	"github.com/gin-gonic/gin"
 	"github.com/sirupsen/logrus"
 	"gorm.io/gorm"

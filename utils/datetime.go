@@ -3,7 +3,7 @@ package utils
 import (
 	"time"
 
-	"github.com/GoldenOwlAsia/go-golang-api/configs"
+	"github.com/ldhoax/SOS-requester/configs"
 )
 
 // ParseDate value: "2023-03-20"

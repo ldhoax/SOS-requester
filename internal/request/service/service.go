@@ -1,8 +1,8 @@
 package service
 
 import (
-	"github.com/GoldenOwlAsia/go-golang-api/internal/request/model"
-	"github.com/GoldenOwlAsia/go-golang-api/internal/request/repository"
+	"github.com/ldhoax/SOS-requester/internal/request/model"
+	"github.com/ldhoax/SOS-requester/internal/request/repository"
 )
 
 type Service struct {
