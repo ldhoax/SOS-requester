@@ -12,7 +12,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func GenerateToken(user_id uint) (string, error) {
+func GenerateToken(user_id string) (string, error) {
 
 	claims := jwt.MapClaims{}
 	claims["authorized"] = true

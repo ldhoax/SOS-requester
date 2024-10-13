@@ -74,8 +74,12 @@ func (r RequestController) Create(c *gin.Context) {
 		return
 	}
 
-	// Auto login for the requester
-	token := 't'
+
+	token, err := token.GenerateToken(requester.ID)
+	if err != nil {
+		r.helper.Respond(c, i18n.Translate("en", "request.create.fail"), err, 0)
+		return
+	}
 
 	r.helper.Respond(c, i18n.Translate("en", "request.create.success"), gin.H{
 		"request": req,

@@ -1,13 +1,5 @@
 
-# Golden Owl Golang Gin API Layout
-
-<p align="center">
-<img src="https://raw.githubusercontent.com/gin-gonic/logo/master/color.png" width="180" alt="accessibility text">
-</p>
-
-## Why Using Gin For Golang Backend?
-
-Gin allows you to build web applications and microservices in Go. It contains a set of commonly used functionalities (e.g., routing, middleware support, rendering, etc.) that reduce boilerplate code and make it simpler to build web applications.
+# SOS requester API - Golang Gin Gorm
 
 
 ## Prerequisites
@@ -118,55 +110,17 @@ response:
   "status": "success",
   "message": "live",
   "data": {
-    "welcome": "Welcome to GoldenOwn Consulting"
+    "welcome": "Requester API alive"
   }
 }
 ```
 
-### Login
+## Authentication
 
-```sh
-curl -L 'localhost:8088/api/v1/user/login' \
--H 'Content-Type: application/json' \
--d '{
-  "username": "admin",
-  "password": "12345678"
-}'
-```
+Users no need to login to use the API.
 
-response:
+## Authorization
 
-
-```json
-{
-    "status": "success",
-    "message": "Login success",
-    "data": {
-        "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE3MDUzOTIzNDQsInVzZXJfaWQiOjEwfQtqD4X_5tl_xsNNkhsP-ub6jBPjFNEa0sRjcGoqdHW8"
-    }
-}
-```
-
-## Current user infomation
-
-```shell
-curl --location 'localhost:8088/api/v1/user' \
---header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE3MDUzOTIzNDQsInVzZXJfaWQiOjEwfQ.tqD4X_5tl_xsNNkhsP-ub6jBPjFNEa0sRjcGoqmdHW8'
-```
-response:
-
-```json
-{
-    "status": "success",
-    "message": "Get user success",
-    "data": {
-        "created_at": "2024-01-15T16:34:14Z",
-        "updated_at": "2024-01-15T16:34:14Z",
-        "username": "edric1",
-        "password": "",
-        "email": "cao.bada96@gmail.com",
-        "status": 1,
-        "id": 1
-    }
-}
-```
+For the first time creating a `SOS request`, we will create a `requester` and return a token.
+After that, the user can access to 'my requests' section by adding the token to `Authorization` header with `Bearer {token}` format.
+Users also update their information by using the token.

@@ -3,7 +3,7 @@ package service
 import (
 	"errors"
 
-	"github.com/GoldenOwlAsia/go-golang-api/internal/user/model"
+	"github.com/GoldenOwlAsia/go-golang-api/internal/requester/model"
 	"github.com/GoldenOwlAsia/go-golang-api/internal/utils/token"
 	"github.com/GoldenOwlAsia/go-golang-api/pkg/erru"
 	"github.com/GoldenOwlAsia/go-golang-api/utils"
@@ -28,7 +28,7 @@ func (s Service) Login(c *gin.Context) (string, error) {
 		return "", erru.ErrArgument{Wrapped: err}
 	}
 
-	u := model.User{}
+	u := model.Requester{}
 	u.Username = loginInput.Username
 	u.Password = loginInput.Password
 
@@ -36,12 +36,12 @@ func (s Service) Login(c *gin.Context) (string, error) {
 	return token, err
 }
 
-func (s Service) LoginCheck(entity *model.User) (string, error) {
+func (s Service) LoginCheck(entity *model.Requester) (string, error) {
 	var err error
 
-	u := model.User{}
+	u := model.Requester{}
 
-	err = s.repo.Db.Model(model.User{}).Where("username = ?", entity.Username).Where("status = ?", 1).Take(&u).Error
+	err = s.repo.Db.Model(model.Requester{}).Where("username = ?", entity.Username).Take(&u).Error
 
 	if err != nil {
 		return "", err

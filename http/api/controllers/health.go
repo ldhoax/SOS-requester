@@ -8,7 +8,7 @@ import (
 
 func (s Controller) Health(c *gin.Context) {
 	data := gin.H{
-		"welcome": "Welcome to GoldenOwn Consulting",
+		"welcome": "Requester API alive",
 	}
 	s.Helper.Respond(c, "live", data, http.StatusOK)
 }

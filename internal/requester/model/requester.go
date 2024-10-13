@@ -1,9 +1,12 @@
 package model
 
 import (
-	"gorm.io/gorm"
-	"github.com/google/uuid"
+	"strings"
 	"time"
+
+	"gorm.io/gorm"
+	"github.com/GoldenOwlAsia/go-golang-api/utils"
+	"github.com/google/uuid"
 )
 
 type Requester struct {
@@ -19,7 +22,17 @@ type Requester struct {
 
 func (r *Requester) BeforeCreate(tx *gorm.DB) (err error) {
 	r.ID = uuid.New().String()
-	r.Username = r.ID
-	r.Password = r.ID + "_" + r.CreatedAt.Format("20060102150405")
+	r.Username = strings.TrimSpace(r.ID)
+	return
+}
+
+func (r *Requester) BeforeSave(tx *gorm.DB) (err error) {
+	r.Username = strings.TrimSpace(r.Username)
+
+	hashedPassword, err := utils.HashPassword(r.ID + "_" + r.CreatedAt.Format("20060102150405"))
+	if err != nil {
+		panic(err)
+	}
+	r.Password = string(hashedPassword)
 	return
 }
