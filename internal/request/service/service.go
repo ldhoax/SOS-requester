@@ -17,6 +17,6 @@ func (s Service) GetAll() ([]model.Request, error) {
 	return s.repo.FindAll()
 }
 
-func (s Service) Get(id uint) (model.Request, error) {
+func (s Service) Get(id string) (model.Request, error) {
 	return s.repo.Find(id)
 }

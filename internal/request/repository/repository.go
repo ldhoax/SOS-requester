@@ -20,9 +20,9 @@ func (r Repository) FindAll() ([]model.Request, error) {
 	return requests, db.HandleError(result.Error)
 }
 
-func (r Repository) Find(id uint) (model.Request, error) {
+func (r Repository) Find(id string) (model.Request, error) {
 	request := model.Request{}
-	result := r.Db.First(&request, id)
+	result := r.Db.First(&request, "id = ?", id)
 	return request, db.HandleError(result.Error)
 }
 
