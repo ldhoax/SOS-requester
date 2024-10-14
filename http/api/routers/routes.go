@@ -20,6 +20,7 @@ func Register(r *gin.Engine, lg *logrus.Logger, db *gorm.DB) {
 	v1 := r.Group("/api/v1")
 	{
 		v1.GET("/health", controller.Health)
+		NewAuthRouter(v1, lg, db)
 		NewRequestRouter(v1, lg, db)
 
 		v1.Use(middlewares.JwtAuthMiddleware())
