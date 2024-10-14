@@ -8,10 +8,12 @@ import (
 
 func (a AuthController) Login(c *gin.Context) {
 	type response struct {
+		ID string `json:"id"`
+		Username string `json:"username"`
 		Token string `json:"token"`
 	}
 
-	token, err := a.authService.Login(c)
+	data, err := a.authService.Login(c)
 
 	if err != nil {
 		a.helper.Respond(c, "Login fail", err, 403)
@@ -19,6 +21,8 @@ func (a AuthController) Login(c *gin.Context) {
 	}
 
 	a.helper.Respond(c, "Login success", response{
-		Token: token,
+		ID: data.ID,
+		Username: data.Username,
+		Token: data.Token,
 	}, http.StatusOK)
 }

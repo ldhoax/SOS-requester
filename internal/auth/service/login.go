@@ -17,26 +17,36 @@ type LoginData struct {
 	Password string `json:"password" valid:"required"`
 }
 
-func (s Service) Login(c *gin.Context) (string, error) {
+type ResponseData struct {
+	ID string `json:"id"`
+	Username string `json:"username"`
+	Token string `json:"token"`
+}
+
+func (s Service) Login(c *gin.Context) (ResponseData, error) {
 	var loginInput LoginData
 
 	if err := c.ShouldBindJSON(&loginInput); err != nil {
-		return "", erru.ErrArgument{Wrapped: err}
+		return ResponseData{}, erru.ErrArgument{Wrapped: err}
 	}
 
 	if _, err := govalidator.ValidateStruct(loginInput); err != nil {
-		return "", erru.ErrArgument{Wrapped: err}
+		return ResponseData{}, erru.ErrArgument{Wrapped: err}
 	}
 
 	u := model.Requester{}
 	u.Username = loginInput.Username
 	u.Password = loginInput.Password
 
-	token, err := s.LoginCheck(&u)
-	return token, err
+	response, err := s.LoginCheck(&u)
+	if err != nil {
+		return ResponseData{}, err
+	}
+
+	return response, nil
 }
 
-func (s Service) LoginCheck(entity *model.Requester) (string, error) {
+func (s Service) LoginCheck(entity *model.Requester) (ResponseData, error) {
 	var err error
 
 	u := model.Requester{}
@@ -44,24 +54,28 @@ func (s Service) LoginCheck(entity *model.Requester) (string, error) {
 	err = s.repo.Db.Model(model.Requester{}).Where("username = ?", entity.Username).Take(&u).Error
 
 	if err != nil {
-		return "", err
+		return ResponseData{}, err
 	}
 
 	err = utils.VerifyPassword(entity.Password, u.Password)
 
 	if err != nil && err == bcrypt.ErrMismatchedHashAndPassword {
-		return "", errors.New("Username or password incorrect")
+		return ResponseData{}, errors.New("Username or password incorrect")
 	} else {
 		if err != nil {
-			return "", err
+			return ResponseData{}, err
 		}
 	}
 
 	token, err := token.GenerateToken(u.ID)
 
 	if err != nil {
-		return "", err
+		return ResponseData{}, err
 	}
 
-	return token, nil
+	return ResponseData{
+		ID: u.ID,
+		Username: u.Username,
+		Token: token,
+	}, nil
 }
