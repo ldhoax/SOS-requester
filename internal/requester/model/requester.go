@@ -20,13 +20,14 @@ type Requester struct {
 	DeletedAt   *time.Time `json:"deleted_at,omitempty"`
 }
 
-func (r *Requester) BeforeCreate(tx *gorm.DB) (err error) {
-	r.ID = uuid.New().String()
-	r.Username = strings.TrimSpace(r.ID)
-	return
-}
-
 func (r *Requester) BeforeSave(tx *gorm.DB) (err error) {
+	if r.ID == "" {
+		r.ID = uuid.New().String()
+	}
+
+	if r.Username == "" {
+		r.Username = r.ID
+	}
 	r.Username = strings.TrimSpace(r.Username)
 
 	hashedPassword, err := utils.HashPassword(r.ID + "_" + r.CreatedAt.Format("20060102150405"))
